@@ -1,5 +1,6 @@
 # vps_setup
 
+apt-get install curl -y
 
 Start the setup with:
 
