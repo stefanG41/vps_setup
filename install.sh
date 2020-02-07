@@ -1,61 +1,5 @@
 #!/bin/bash
-# Installation the needed setup to run docker
-clear
-echo ''
-echo ''
-echo ''
-echo ''
-echo 'Action should be start now! Please choose your option '
-echo ''
-echo ''
-echo ''
-echo ''
-# Interaktive Eingabe, if-Abfrage
-echo 'Hello, you like to install your Docker server automatically?'
-echo 'Please choos from the following option to install:'
-echo '####################################################'
-echo ''
-echo ''
-echo '1. Install all needed application to start with your server:   choose   server'
-echo ' - Update the server with the last updates'
-echo ' - Install needed application like "sudo curl vim fail2ban and config fail2ban with a few modifcations"'
-echo ' - Added two users xgaers and docker and added them to sudo, on the same step is the install file copy to docker home folder.'
-echo '####################################################'
-echo ''
-echo ''
-echo '2. Install all needed application to start with docker:   choose   docker'
-echo ' - install the needed application to run docker'
-echo ' - start the docker network'
-echo ' - install the ngnix proxy for docker, with certbot'
-echo '####################################################'
-echo '####################################################'
-echo '2.1 Install only nginx proxy after complete reset'
-echo '####################################################'
-echo 'HINWEIS for nginx, need to disable the test STG option on the install.sh file put a hash in front of the certbot line or the setup don´t start succefully!'
-echo '####################################################'
-echo ''
-echo ''
-echo '3. Install docker with wordpress:   choose   wp'
-echo '4. Install docker with nextcloud:   choose   nx'
-echo ''
-echo '####################################################'
-echo ''
-echo '5. exit choose   quit'
-echo '####################################################'
-echo ''
-echo '6. extra options, enable or disable http redirtion to https for testing, Certbot enable STG or disable Prod'
-echo 'choose   http to https or https to http'
-echo ''
-echo 'chosse Disable the certbotstg to prod: certbotstg'
-echo 'chosse to enable the certbotprod to stg: certbotprod'
-echo ''
-echo 'Please type your answer now: '
-read answer
-echo Answer for the action is: $answer
 
-#-------------------------------
-
-#----- First part is outsourced to the install_server.sh -----
 
 
 install_docker_5_action ()
@@ -73,7 +17,7 @@ systemctl enable docker
 install_docker_composer_7_action ()
 {
 curl -L https://github.com/docker/compose/releases/download/1.24.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
-chmod +x /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose | sude -E bash
 }
 
 
