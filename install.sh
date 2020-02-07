@@ -1,27 +1,6 @@
 #!/bin/bash
 
 
-
-install_docker_5_action ()
-{
-curl -sS https://get.docker.com/ | sh
-}
-
-modify_docker_6_action ()
-{
-usermod -aG docker docker
-
-systemctl enable docker
-}
-
-install_docker_composer_7_action ()
-{
-curl -L https://github.com/docker/compose/releases/download/1.24.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
-chmod +x /usr/local/bin/docker-compose | sude -E bash
-}
-
-
-
 start_docker_network_8 ()
 {
 su - docker <<EOF
