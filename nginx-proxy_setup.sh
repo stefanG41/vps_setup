@@ -74,10 +74,6 @@ docker-compose up -d
 id
 EOF
 
-echo '############# Action is requierd ############'
-echo 'To finish the setup pls:'
-echo 'Press CTRL+D to finish'
-
 
 }
 
