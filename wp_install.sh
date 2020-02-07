@@ -60,7 +60,6 @@ echo 'LETSENCRYPT_EMAIL='$emailadress >> .env
 echo 'DOMAINS='$subdomain.$domain >> .env
 echo 'WORDPRESS_DB_HOST=db_node_'$subdomain.$domain':3306' >> .env
 echo 'CONTAINER_WP_NAME=wp_'$subdomain.$domain >> .env
-echo '------------ WP Mail SMTP config -------------------' >> .env
 echo 'WPMS_SMTP_USER='$WPMS_SMTP_USER >> .env
 echo 'WPMS_SMTP_SERVER='$WPMS_SMTP_SERVER >> .env 
 echo 'WPMS_SMTP_PASS='$WPMS_SMTP_PASSWORD >> .env
