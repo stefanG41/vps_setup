@@ -12,7 +12,7 @@ A part what need to be done too is install the nginx-proxy
 su - docker 
 
 
-
+curl -sL  https://raw.githubusercontent.com/stefanG41/vps_setup/master/nginx-proxy_setup.sh | bash
 
 
 
