@@ -7,7 +7,7 @@ Start the setup with:
 curl -sL  https://raw.githubusercontent.com/stefanG41/vps_setup/master/vps_setup.sh | sudo -E bash
 
 
-A part what need to be done too is install the nginx-proxy
+A part what need to be done too is install the nginx-proxy, the script is install the docker container under the user 'docker' what was created on the setup script.
 
 curl -sL  https://raw.githubusercontent.com/stefanG41/vps_setup/master/nginx-proxy_setup.sh | sudo -E bash
 
@@ -16,11 +16,6 @@ switch to the new docker user and run followong command:
 
 
 su - docker 
-
-
-
-
-
 
 wget https://raw.githubusercontent.com/stefanG41/vps_setup/master/wp_install.sh
 
