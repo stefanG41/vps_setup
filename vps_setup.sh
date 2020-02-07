@@ -35,10 +35,6 @@ add_user_4_action ()
 adduser docker --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password
 adduser docker sudo
 echo 'docker:docker$0987' | chpasswd
-
-cp install.sh /home/docker/.
-chown root:docker /home/docker/install.sh
-chmod +x /home/docker/install.sh
 }
 
 
