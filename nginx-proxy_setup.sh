@@ -49,7 +49,7 @@ echo '      - dockergen' >> docker-compose.yml
 echo '    environment:' >> docker-compose.yml
 echo '      NGINX_PROXY_CONTAINER: nginx-proxy' >> docker-compose.yml
 echo '      NGINX_DOCKER_GEN_CONTAINER: nginx-proxy-gen' >> docker-compose.yml
-echo '      ACME_CA_URI: https://acme-staging.api.letsencrypt.org/directory' >> docker-compose.yml
+echo '   #   ACME_CA_URI: https://acme-staging.api.letsencrypt.org/directory' >> docker-compose.yml
 echo '    volumes:' >> docker-compose.yml
 echo '      - conf:/etc/nginx/conf.d' >> docker-compose.yml
 echo '      - vhost:/etc/nginx/vhost.d' >> docker-compose.yml
