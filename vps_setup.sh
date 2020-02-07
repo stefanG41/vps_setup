@@ -41,4 +41,10 @@ chown root:docker /home/docker/install.sh
 chmod +x /home/docker/install.sh
 }
 
+
+add_autoupdate_1_action
+install_needed_application_2_action
+modify_application_3_action
+add_user_4_action
+
 curl -sL  https://raw.githubusercontent.com/stefanG41/vps_setup/master/install.sh | sudo -E bash
