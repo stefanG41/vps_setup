@@ -18,10 +18,16 @@ echo 'Plaese add the admin user for the wordpress backend, ex: AdminWP'
 read -e admin_user
 echo 'Plaese set the admin password for the wordpress backend.'
 read -e admin_pass
-echo 'Please add the main E-Mail adress for LETSENCRYPT_EMAIL, ex: xgaers@xgaers.de'
-read -p "Chosse A (a) or B (b) for A you can choose your own email and for b standard mail xgaers@xgaers.de " kommando; if [ $kommando == 'a' ]; then read -e emailadress; elif [ $kommando == 'b' ]; then emailadress=xgaers@xgaers.de; else echo "Abbruch."; fi
-echo 'Please add the SMTP Mail password for WP Mail SMTP config, ex: xgaers@xgaers.de'
-read -p "Chosse A (a) or B (b) for A you can own smtp password and for b standard smtp for ellaswelt " kommando; if [ $kommando == 'a' ]; then read -e WPMS_SMTP_PASSWORD; elif [ $kommando == 'b' ]; then WPMS_SMTP_PASSWORD=SMTPELLasWelT0803; else echo "Abbruch."; fi
+echo 'Please add the main e-mail adress for LETSENCRYPT_EMAIL, ex: username@domainname.com'
+read -e emailadress
+echo 'Please add the SMTP Mail UserID for WP Mail SMTP config, ex: username@domainname.com'
+read -e WPMS_SMTP_USER
+echo 'Please add the SMTP Mail password for WP Mail SMTP config, ex: username@domainname.com'
+read -e WPMS_SMTP_PASSWORD
+echo 'Please add the SMTP server, ex: smtp.strato.de'
+read -e WPMS_SMTP_SERVER
+
+
 #read -e emailadress
 echo 'I got the following info for the setup your Wordpress:'
 echo 'URL will be: '$subdomain.$domain
@@ -54,7 +60,10 @@ echo 'LETSENCRYPT_EMAIL='$emailadress >> .env
 echo 'DOMAINS='$subdomain.$domain >> .env
 echo 'WORDPRESS_DB_HOST=db_node_'$subdomain.$domain':3306' >> .env
 echo 'CONTAINER_WP_NAME=wp_'$subdomain.$domain >> .env
-echo 'SMTP_WP_WPMS_PASSWORD='$WPMS_SMTP_PASSWORD >> .env
+echo '------------ WP Mail SMTP config -------------------' >> .env
+echo 'WPMS_SMTP_USER='$WPMS_SMTP_USER >> .env
+echo 'WPMS_SMTP_SERVER='$WPMS_SMTP_SERVER >> .env 
+echo 'WPMS_SMTP_PASS='$WPMS_SMTP_PASSWORD >> .env
 
 touch docker-compose.yml
 
@@ -122,9 +131,7 @@ echo '      name: ${NETWORK}' >> docker-compose.yml
 
 wp-core-install ()
 {
-#cat >> wp-core-install.sh <<EOL
 
-##!/bin/bash
 sleep 20
 docker-compose run --rm wpcli core install --url="https://$subdomain.$domain" --title="$subdomain.$domain" --admin_user=$admin_user --admin_password=$admin_pass --admin_email=$emailadress --skip-email
 docker-compose run --rm wpcli language core install de_DE
@@ -136,9 +143,7 @@ docker-compose run --rm wpcli plugin update --all >> wp-update.log
 docker-compose run --rm wpcli theme update --all >> wp-update.log
 docker-compose run --rm wpcli language core update >> wp-update.log
 docker-compose run --rm wpcli language plugin update --all >> wp-update.log
-#EOL
-#chown docker:docker wp-core-install.sh
-#chmod +x wp-core-install.sh
+
 }
 
 
@@ -166,7 +171,7 @@ echo 'Please type your answer now: process or exit? '
 echo ''
 echo "Install Wordpress for Docker, progress pls type 'without' for option without docker up for testing: "
 echo ''
-echo "Install Wordpress for Docker, progress pls type yes for option with docker up: "
+echo "Install Wordpress for Docker, progress pls type 'yes' for option with docker up: "
 echo ''
 echo 'Choose your answer please: ' & read answer
 echo ''
