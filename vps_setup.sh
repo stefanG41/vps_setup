@@ -37,6 +37,26 @@ adduser docker sudo
 echo 'docker:docker$0987' | chpasswd
 }
 
+
+install_docker_5_action ()
+{
+curl -sS https://get.docker.com/ | sh
+}
+
+modify_docker_6_action ()
+{
+usermod -aG docker docker
+
+systemctl enable docker
+}
+
+install_docker_composer_7_action ()
+{
+curl -L https://github.com/docker/compose/releases/download/1.24.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose | sude -E bash
+}
+
+
 start_next_script ()
 {
 curl -sL  https://raw.githubusercontent.com/stefanG41/vps_setup/master/install.sh | sudo -E bash
@@ -46,5 +66,8 @@ add_autoupdate_1_action
 install_needed_application_2_action
 modify_application_3_action
 add_user_4_action
+install_docker_5_action
+modify_docker_6_action
+install_docker_composer_7_action
 start_next_script
 
