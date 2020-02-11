@@ -49,7 +49,7 @@ curl -sS https://get.docker.com/ | sh
 
 modify_docker_6_action ()
 {
-usermod -aG docker docker
+usermod -aG $docker_user docker
 
 systemctl enable docker
 }
