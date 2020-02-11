@@ -10,3 +10,5 @@ read -e -s docker_password
 adduser $docker_user --gecos "First Last,RoomNumber,WorkPhone,HomePhone"
 adduser $docker_user sudo
 }
+
+add_user_4_action
