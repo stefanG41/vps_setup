@@ -2,8 +2,7 @@
 
 Start the setup with:
 
-apt-get install curl -y
-curl -sL  https://raw.githubusercontent.com/stefanG41/vps_setup/master/vps_setup.sh | sudo -E bash
+apt-get install sudo curl -y && curl -sL  https://raw.githubusercontent.com/stefanG41/vps_setup/master/vps_setup.sh | sudo -E bash
 
 
 A part what need to be done too is install the nginx-proxy, the script is install the docker container under the user 'docker' what was created on the setup script.
