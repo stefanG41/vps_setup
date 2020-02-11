@@ -1,10 +1,8 @@
 # vps_setup
 
-apt-get install curl -y
-
 Start the setup with:
 
-
+apt-get install curl -y
 curl -sL  https://raw.githubusercontent.com/stefanG41/vps_setup/master/vps_setup.sh | sudo -E bash
 
 
