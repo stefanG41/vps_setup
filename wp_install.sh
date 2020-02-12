@@ -135,7 +135,7 @@ sleep 20
 docker-compose run --rm wpcli core install --url="https://$subdomain.$domain" --title="$subdomain.$domain" --admin_user=$admin_user --admin_password=$admin_pass --admin_email=$emailadress --skip-email
 docker-compose run --rm wpcli language core install de_DE
 docker-compose run --rm wpcli language core activate de_DE
-docker-compose run --rm wpcli  wpcli plugin install wp-mail-smtp --activate
+docker-compose run --rm wpcli plugin install wp-mail-smtp --activate
 docker-compose run --rm wpcli plugin list >> wp-update.log
 docker-compose run --rm wpcli core update >> wp-update.log
 docker-compose run --rm wpcli plugin update --all >> wp-update.log
