@@ -32,13 +32,10 @@ fail2ban-client get sshd ignoreip
 
 add_user_4_action ()
 {
-echo 'Plaese add user account for Docker, the new account will be added to sudo group. You need to provide three times the new password.'
-read -e docker_user
-echo 'Plaese add password for the new docker user'
-read -e -s docker_password
 
-adduser $docker_user --gecos "First Last,RoomNumber,WorkPhone,HomePhone"
-adduser $docker_user sudo
+adduser docker --gecos "First Last,RoomNumber,WorkPhone,HomePhone" --disabled-password
+adduser docker sudo
+
 }
 
 
@@ -65,6 +62,15 @@ start_next_script ()
 {
 curl -sL  https://raw.githubusercontent.com/stefanG41/vps_setup/master/install.sh | sudo -E bash
 }
+
+
+echo_user_account_info ()
+
+{
+echo 'In the script was created a user account like docker, pls chankge the password for the user to use sudo if is needed.'
+echo 'passwd docker    to set a new password!'
+}
+
 
 add_autoupdate_1_action
 install_needed_application_2_action
