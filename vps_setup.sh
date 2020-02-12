@@ -45,7 +45,7 @@ install_docker_5_action ()
 echo "# Executing docker install script, commit: $SCRIPT_COMMIT_SHA"
 
         if docker -v ; then
-                echo "Docker is already installed, scipt stop to don´t crash the system"
+                echo "Docker is already installed, script stop to don´t crash the system"
                 echo "If you need a reinstall of docker pls use the command: "
                 echo "curl -sS https://get.docker.com/ | sh"
                 docker_version="$(docker -v | cut -d ' ' -f3 | cut -d ',' -f1)"
