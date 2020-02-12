@@ -24,4 +24,4 @@ bash wp_install.sh
 
 
 
-apt-get install sudo curl -y && curl -sL  https://raw.githubusercontent.com/stefanG41/vps_setup/master/vps_setup.sh | sudo -E bash && curl -sL  https://raw.githubusercontent.com/stefanG41/vps_setup/master/nginx-proxy_setup.sh | sudo -E bash && su - docker wget https://raw.githubusercontent.com/stefanG41/vps_setup/master/wp_install.sh | bash && bash wp_install.sh
+apt-get install sudo curl -y && curl -sL  https://raw.githubusercontent.com/stefanG41/vps_setup/master/vps_setup.sh | sudo -E bash && curl -sL  https://raw.githubusercontent.com/stefanG41/vps_setup/master/nginx-proxy_setup.sh | sudo -E bash && su - docker && wget https://raw.githubusercontent.com/stefanG41/vps_setup/master/wp_install.sh | bash && bash wp_install.sh
