@@ -98,9 +98,9 @@ echo '        WORDPRESS_DB_HOST: ${WORDPRESS_DB_HOST}' >> docker-compose.yml
 echo '        WORDPRESS_DB_USER: ${MYSQL_USER}' >> docker-compose.yml
 echo '        WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD}' >> docker-compose.yml
 echo '        WORDPRESS_DB_NAME: ${MYSQL_DATABASE}' >> docker-compose.yml
-echo '        WORDPRESS_CONFIG_EXTRA='
-echo '           define( 'WPMS_ON', true );'
-echo '           define( 'WPMS_SMTP_PASS', ${WPMS_SMTP_PASSWORD} );'
+echo '        WORDPRESS_CONFIG_EXTRA=' >> docker-compose.yml
+echo '           define( 'WPMS_ON', true );' >> docker-compose.yml
+echo '           define( 'WPMS_SMTP_PASS', ${WPMS_SMTP_PASSWORD} );' >> docker-compose.yml
 echo '     container_name: ${CONTAINER_WP_NAME}' >> docker-compose.yml
 echo ''
 echo ''
