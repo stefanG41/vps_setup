@@ -80,4 +80,4 @@ install_docker_5_action
 modify_docker_6_action
 install_docker_composer_7_action
 start_next_script
-
+echo_user_account_info
