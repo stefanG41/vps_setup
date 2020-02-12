@@ -5,7 +5,7 @@ apt-get update && apt-get upgrade -y
 }
 
 install_needed_application_2_action () {
-apt install sudo curl vim fail2ban pwgen -y
+apt install sudo curl vim fail2ban pwgen htop -y
 }
 
 modify_application_3_action ()
