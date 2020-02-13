@@ -1,7 +1,7 @@
 #!/bin/bash
 
 add_autoupdate_1_action () {
-apt-get update && apt-get upgrade -y
+apt-get update && sudo apt-get upgrade -y
 }
 
 install_needed_application_2_action () {
